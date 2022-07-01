@@ -20,8 +20,8 @@ const Usuario = db.define('Usuario', {
         type: DataTypes.STRING(20),
         allowNull: false
     },
-    perfil_img:{
-        type: DataTypes.UUID,
+    perfil_img_path:{
+        type: DataTypes.STRING(255),
         allowNull: false
     }
 }, {

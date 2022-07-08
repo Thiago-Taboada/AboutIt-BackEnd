@@ -5,12 +5,12 @@ const router = express.Router();
 const Usuario = require('../models/aboutIt/usuario');
 
 router.get('/', async (req, res) => {
-    const usuarios = await Usuario.findAll({include: 'usuario'});
+    const usuarios = await Usuario.findAll;
     res.send(usuarios);
 });
 
 router.get('/:id', async (req, res) => {
-    const usuario = await Usuario.findByPk(req.params.id, {include: 'usuario'});
+    const usuario = await Usuario.findByPk(req.params.id);
     res.send(usuario);
 });
 

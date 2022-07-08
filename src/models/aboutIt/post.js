@@ -10,10 +10,6 @@ const Post = db.define('Post', {
             autoIncrement: true,
             primaryKey: true
         },
-        titulo: {
-            type: DataTypes.STRING(100),
-            allowNull: false
-        },
         texto:{
             type: DataTypes.TEXT
         },

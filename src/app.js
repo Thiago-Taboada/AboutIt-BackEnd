@@ -8,7 +8,7 @@ app.use(express.json());
 const aboutItRouter = require('./routers/aboutItRouter');
 const comunidadeRouter = require('./routers/comunidadeRouter');
 const postRouter = require('./routers/postRouter');
-const usuario = require('./routers/usuario');
+const usuarioRouter = require('./routers/usuarioRouter');
 
 app.use('/aboutIt', aboutItRouter);
 app.use('/comunidade', comunidadeRouter);

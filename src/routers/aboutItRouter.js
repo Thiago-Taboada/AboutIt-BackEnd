@@ -1,8 +1,8 @@
 const express = require('express');
 
-const Comunidade = require('../../models/aboutit/comunidade');
-const Usuario = require('../../models/aboutit/usuario');
-const Post = require('../../models/aboutit/post');
+const Comunidade = require('../models/aboutIt/comunidade');
+const Usuario = require('../models/aboutIt/usuario');
+const Post = require('../models/aboutIt/post');
 
 const router = express.Router();
 router.use(express.json());

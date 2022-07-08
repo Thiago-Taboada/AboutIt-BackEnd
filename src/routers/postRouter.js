@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const Post = require('../models/aboutit/post');
+const Post = require('../models/aboutIt/post');
 
 router.get('/', async (req, res) => {
     const posts = await Post.findAll({include: 'usuario'});

@@ -5,7 +5,7 @@ const router = express.Router();
 const Usuario = require('../models/aboutIt/usuario');
 
 router.get('/', async (req, res) => {
-    const usuarios = await Usuario.findAll;
+    const usuarios = await Usuario.findAll();
     res.send(usuarios);
 });
 

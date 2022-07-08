@@ -1,19 +1,21 @@
 const express = require('express');
 const env = require('dotenv/config')
 
-const alunoRouter = require('./alunosRouter');
-const aboutItRouter = require('./routers/aboutItRouter');
-
 const database = require('./db');
-
 const app = express();
 app.use(express.json());
 
-app.use('/alunos', alunoRouter);
+const aboutItRouter = require('./routers/aboutItRouter');
+const comunidadeRouter = require('./routers/comunidadeRouter');
+const postRouter = require('./routers/postRouter');
+const usuario = require('./routers/usuario');
+
 app.use('/aboutIt', aboutItRouter);
+app.use('/comunidade', comunidadeRouter);
+app.use('/post', postRouter);
+app.use('/usuario', usuario);
 
-
-app.listen(process.env.PORT, async () => {
+app.listen(process.env.PORT || 3000, async ()=>{
     const resultDb = await database.sync({force:true});
     console.log('server started');
 })

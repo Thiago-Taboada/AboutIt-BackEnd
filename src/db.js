@@ -1,9 +1,23 @@
 const { Sequelize } = require('sequelize');
 
-//const dbSequelize = new Sequelize(process.env.DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
-//    dialect: process.env.DB_DIALECT, host: process.env.DB_HOST
-//});
+dbSequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
+  }
+);
 
-const dbSequelize = new Sequelize(process.env.DATABASE_URL);
+dbSequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
 
 module.exports = dbSequelize;

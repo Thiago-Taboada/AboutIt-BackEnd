@@ -13,7 +13,7 @@ const usuarioRouter = require('./routers/usuarioRouter');
 app.use('/aboutIt', aboutItRouter);
 app.use('/comunidade', comunidadeRouter);
 app.use('/post', postRouter);
-app.use('/usuario', usuario);
+app.use('/usuario', usuarioRouter);
 
 app.listen(process.env.PORT || 3000, async ()=>{
     const resultDb = await database.sync({force:true});

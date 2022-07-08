@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const Comunidade = require('../../models/aboutit/comunidade')
+const Comunidade = require('../models/aboutIt/comunidade')
 
 router.get('/', async (req, res) => {
     const comunidades = await Comunidade.findAll();
